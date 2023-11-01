@@ -28,6 +28,7 @@
          .right-top > a {
             margin-right: 1rem;
          }
+         
         </style>
 
     </head>
@@ -47,5 +48,10 @@
         </div>
     @endif
 </div>
+<div class="video-wrap">
+            <video id="video" autoplay loop muted>
+                <source src="resources\views\fondo-login.mp4" type="video/mp4">
+            </video>
+        </div>
     </body>
 </html>
