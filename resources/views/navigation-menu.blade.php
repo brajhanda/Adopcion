@@ -13,10 +13,19 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Inicio') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('Adopta') }}" :active="request()->routeIs('Adopta')">
+                        {{ __('Adopta') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('RegistrarMascota') }}" :active="request()->routeIs('dar en adopcion ')">
+                        {{ __('dar en adopcion ') }}
+                    </x-nav-link>
+                  
+                    
                 </div>
             </div>
+            
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
@@ -139,8 +148,20 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('home')">
+                {{ __('home') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link href="" :active="request()->routeIs('adopta')">
+                        {{ __('adopta') }}
+            </x-responsive-nav-link>
+                    
+            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dar en adopcion ')">
+                        {{ __('dar en adopcion ') }}
+            </x-responsive-nav-link>
+                    
+            <x-responsive-nav-link href="" :active="request()->routeIs('buscar')">
+                        {{ __('buscar') }}
             </x-responsive-nav-link>
         </div>
 

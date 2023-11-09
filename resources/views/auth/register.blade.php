@@ -29,6 +29,14 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
+            <div class="mt-4">
+                <x-label for="role_id" value="{{ __('Tipo de usuario:') }}" />
+               <select name="role_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                    <option value="1">Adoptante</option>
+                    <option value="2">Dador en adopcion</option>
+               </select>
+            </div>
+
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-label for="terms">

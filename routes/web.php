@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,20 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    
+    Route::get('/RegistrarMascota', function () {
+        return view('RegistrarMascota');
+    })->name('RegistrarMascota');
+
+    Route::post('Mascota', [Controller::class, 'store'])->name('Mascota.store');
+
+    Route::get('/Adopta', function () {
+        return view('Adopta');
+    })->name('Adopta');
+    
+})->middleware('edad');
+
+Route::get ('no tiene la edad' , function () {
+    return"usted no es nayor de edad";
 });
+
