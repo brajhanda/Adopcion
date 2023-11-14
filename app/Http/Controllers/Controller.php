@@ -11,14 +11,4 @@ use App\Models\Mascota;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-
-    public function store(Request $request){
-
-        $Pet =new Mascota();
-        $Pet->Edad = $request->Edad;
-        $Pet->Genero = $request->Genero;
-        $Pet->Descripcion = $request->Descripcion;
-        $Pet->save();
-        return redirect()->route("dashboard");
-    }
 }

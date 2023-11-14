@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdoptaController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InicioController;
+use App\Http\Controllers\MascotaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,32 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', HomeController::class);
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/Inicio', InicioController::class)->name('Inicio');
     
-    Route::get('/RegistrarMascota', function () {
-        return view('RegistrarMascota');
-    })->name('RegistrarMascota');
+    Route::get('/RegistrarMascota', [MascotaController::class, 'index'])->name('RegistrarMascota');
 
-    Route::post('Mascota', [Controller::class, 'store'])->name('Mascota.store');
+    Route::post('Mascota', [MascotaController::class, 'Registrar'])->name('Mascota.Registrar');
 
-    Route::get('/Adopta', function () {
-        return view('Adopta');
-    })->name('Adopta');
+    Route::get('/Adopta', AdoptaController::class)->name('Adopta');
     
-})->middleware('edad');
-
-Route::get ('no tiene la edad' , function () {
-    return"usted no es nayor de edad";
 });
+
 

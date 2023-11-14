@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Mascotas', function (Blueprint $table) {
+        Schema::create('mascotas', function (Blueprint $table) {
             $table->id();
             $table->string('genero');
             $table->string('edad');
             $table->string('descripcion');
+            $table->string('FotoMascota', 2048)->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
-            $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Mascotas');
+        Schema::dropIfExists('mascotas');
     }
 };

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Adoptame</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -36,22 +36,19 @@
     <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 selection:bg-red-500 selection:text-white">
     @if (Route::has('login'))
         <div class="sm:fixed right-top p-6 text-right z-10">
+            <br>
             @auth
-                <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                <a href="{{ url('/Inicio') }}" class="">Inicio</a>
             @else
-                <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Iniciar sesión</a>
+                <a href="{{ route('login') }}" class="" style=" cursor: pointer; background-color: #fff;border: 2px solid #000000;border-radius: 10px;padding: 10px 10px;font-size: 16px;color: #000000;color: #000;font-size: 1.2rem;text-decoration: none;">Iniciar sesión</a>
 
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Registrarse</a>
+                    <a href="{{ route('register') }}" class="" style=" cursor: pointer; background-color: #fff;border: 2px solid #000000;border-radius: 10px;padding: 10px 10px;font-size: 16px;color: #000000;color: #000;font-size: 1.2rem;text-decoration: none;">Registrarse</a>
                 @endif
             @endauth
         </div>
     @endif
 </div>
-<div class="video-wrap">
-            <video id="video" autoplay loop muted>
-                <source src="resources\views\fondo-login.mp4" type="video/mp4">
-            </video>
-        </div>
+<img src="img/FondoHome.jpg" width="100%">
     </body>
 </html>
